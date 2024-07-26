@@ -1,3 +1,4 @@
+import Header from "./_components/Header";
 import SideNav from "./_components/SideNav";
 
 export default function DashboardLayout({
@@ -11,6 +12,7 @@ export default function DashboardLayout({
         <SideNav />
       </div>
       <div className="md:ml-64">
+        <Header />
         {children}
       </div>
     </div>

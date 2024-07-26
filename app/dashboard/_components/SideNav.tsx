@@ -1,8 +1,12 @@
+"use client";
+
 import { FileClock, Home, Settings, WalletCards } from 'lucide-react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import React from 'react'
 
 const SideNav = () => {
+  const pathname = usePathname();
   const menuItems = [
     {
       name: "Home",
@@ -34,7 +38,7 @@ const SideNav = () => {
 
       <div className='my-6'>
         {menuItems.map((item, index) => (
-          <div key={index} className='flex items-center justify-start gap-3 p-3 mb-2 hover:bg-blue-600 hover:text-white cursor-pointer rounded'>
+          <div key={index} className={`flex items-center justify-start gap-3 p-3 mb-2 hover:bg-blue-600 hover:text-white cursor-pointer rounded ${pathname === item.path && 'bg-blue-600 text-white'}`}>
             <item.icon className='w-6 h-6' />
             <span className='text-sm font-medium'>{item.name}</span>
           </div>
