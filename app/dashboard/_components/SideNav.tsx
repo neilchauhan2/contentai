@@ -30,9 +30,9 @@ const SideNav = () => {
     },
   ]
   return (
-    <div className='h-screen p-5 shadow-sm border'>
+    <div className='h-screen p-5 shadow-sm border bg-white'>
       <div className='flex items-center justify-start gap-3'>
-        <Image src={"./logo.svg"} alt="logo" width={40} height={40} />
+        <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
         <span className='text-xl font-bold'>ContentAI</span>
       </div>
 

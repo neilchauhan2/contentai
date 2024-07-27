@@ -1,18 +1,7 @@
-import {
-  Captions,
-  FileText,
-  Laptop,
-  NotepadText,
-  Podcast,
-  ShoppingCart,
-  SmilePlus,
-  LucideIcon,
-} from "lucide-react";
-
 export interface TemplateProps {
   name: string;
   desc: string;
-  icon: LucideIcon;
+  icon: string;
   category: string;
   slug: string;
   aiPrompt: string;
@@ -34,7 +23,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Give me 5 blog titles on the basis of the provided input niche and outline, with each output item having a unique and creative title. I also want you to write a short description for each title. The description should be between 100 and 200 words long. Make sure to include a catchy phrase or tagline that will entice readers to click on the title and read the full post. Return the results in Rich Text format.",
     category: "Blog",
-    icon: NotepadText,
+    icon: "/notepad-text.svg",
     form: [
       {
         label:
@@ -57,7 +46,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Create 5 SEO-friendly YouTube titles based on the provided video topic and key points. Ensure each title is unique, catchy, and includes relevant keywords to improve searchability and click-through rates.",
     category: "YouTube",
-    icon: Laptop,
+    icon: "/laptop.svg",
     form: [
       {
         label: "Enter the video topic",
@@ -79,7 +68,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Write a detailed YouTube video description based on the provided topic and key points. The description should be engaging and informative, including a summary of the video's content, timestamps, and relevant links. Aim for a length of 250 to 500 words.",
     category: "YouTube",
-    icon: Captions,
+    icon: "/captions.svg",
     form: [
       {
         label: "Enter the video topic",
@@ -101,7 +90,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Rewrite the provided article to ensure it is plagiarism-free while maintaining the original meaning and structure. Make sure the new version is unique and passes plagiarism checks.",
     category: "Article",
-    icon: FileText,
+    icon: "/file-text.svg",
     form: [
       {
         label: "Enter the article text you want to rewrite",
@@ -118,7 +107,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Enhance the provided text by adding relevant and appropriate emojis. Ensure the emojis add value and context to the text without making it look cluttered or unprofessional.",
     category: "Text Enhancement",
-    icon: SmilePlus,
+    icon: "/smile-plus.svg",
     form: [
       {
         label: "Enter the text",
@@ -135,7 +124,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Create 5 unique and engaging social media captions based on the provided context and key points. Each caption should be concise, attention-grabbing, and suitable for platforms like Instagram, Twitter, and Facebook.",
     category: "Social Media",
-    icon: Podcast,
+    icon: "/podcast.svg",
     form: [
       {
         label: "Enter the context or topic",
@@ -157,7 +146,7 @@ export const templates: TemplateProps[] = [
     aiPrompt:
       "Write a detailed product description based on the provided product features and specifications. Ensure the description is engaging, informative, and highlights the key benefits of the product. Aim for a length of 150 to 300 words.",
     category: "E-commerce",
-    icon: ShoppingCart,
+    icon: "/shopping-cart.svg",
     form: [
       {
         label: "Enter the product features and specifications",
