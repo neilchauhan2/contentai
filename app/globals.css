@@ -67,3 +67,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.ql-container {
+  border: none !important;
+}
+
+.ql-toolbar {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+}

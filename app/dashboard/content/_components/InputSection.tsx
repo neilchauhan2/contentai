@@ -20,7 +20,7 @@ const InputSection = ({ selectedTemplate, processFormData }: { selectedTemplate:
   }
 
   return (
-    <div className='p-5 shadow-md border rounded-lg bg-white'>
+    <div className='p-5 shadow-md border rounded-lg bg-white h-[520px] relative'>
       <div className='flex items-center gap-3 mb-2'>
         <Image
           src={selectedTemplate.icon}
@@ -60,7 +60,7 @@ const InputSection = ({ selectedTemplate, processFormData }: { selectedTemplate:
             </div>
           ))}
         <Button
-          className='w-full py-6 text-white bg-blue-600 rounded-lg font-bold hover:scale-105 transition-all duration-300 hover:bg-blue-700'
+          className='w-[90%] py-6 text-white bg-blue-600 rounded-lg font-bold hover:scale-105 transition-all duration-300 hover:bg-blue-700 absolute bottom-0 right-0 left-0 my-4 mx-auto'
           type='submit'>
           Generate Content
         </Button>
