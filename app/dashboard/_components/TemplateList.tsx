@@ -17,7 +17,7 @@ function TemplateList({ templateSearchInput }: { templateSearchInput: string }) 
     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5'>
       {templateList.map((template) => {
         return (
-          <TemplateCard {...template} />
+          <TemplateCard {...template} key={template.slug} />
         )
       })}
     </div>

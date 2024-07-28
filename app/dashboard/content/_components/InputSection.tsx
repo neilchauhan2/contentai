@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import Image from 'next/image'
+import { Loader2Icon } from 'lucide-react'
 
-const InputSection = ({ selectedTemplate, processFormData }: { selectedTemplate: TemplateProps, processFormData: (formData: Record<string, string>) => void }) => {
+const InputSection = ({ selectedTemplate, processFormData, loading }: { selectedTemplate: TemplateProps, processFormData: (formData: Record<string, string>) => void, loading: boolean }) => {
   const [formData, setFormData] = useState<Record<string, string>>({})
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -60,9 +61,10 @@ const InputSection = ({ selectedTemplate, processFormData }: { selectedTemplate:
             </div>
           ))}
         <Button
-          className='w-[90%] py-6 text-white bg-blue-600 rounded-lg font-bold hover:scale-105 transition-all duration-300 hover:bg-blue-700 absolute bottom-0 right-0 left-0 my-4 mx-auto'
+          className={`w-[90%] py-6 text-white bg-blue-600 rounded-lg font-bold hover:scale-105 transition-all duration-300 hover:bg-blue-700 absolute bottom-0 right-0 left-0 my-4 mx-auto ${loading && 'bg-gray-400'}`}
+          disabled={loading}
           type='submit'>
-          Generate Content
+          {loading ? <Loader2Icon className='animate-spin w-5 h-5 text-gray-600' /> : 'Generate Content'}
         </Button>
       </form>
     </div>

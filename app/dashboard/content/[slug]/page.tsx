@@ -1,11 +1,12 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import InputSection from '../_components/InputSection'
 import OutputSection from '../_components/OutputSection'
 import { templates } from '@/app/(categoryTemplate)/templates'
 import Link from 'next/link'
 import { MoveLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { chatSession } from '@/app/utils/GeminiModel'
 
 interface CreateContentPageProps {
   params: {
@@ -15,9 +16,16 @@ interface CreateContentPageProps {
 
 function CreateContentPage({ params: { slug } }: CreateContentPageProps) {
   const selectedTemplate = templates.find(template => template.slug === slug)
+  const [loading, setLoading] = useState(false);
+  const [output, setOutput] = useState('');
 
-  const generateAIContent = (formData: Record<string, string>) => {
-    console.log(formData)
+  const generateAIContent = async (formData: Record<string, string>) => {
+    setLoading(true);
+    const prompt = selectedTemplate?.aiPrompt;
+    const preparedPrompt = JSON.stringify(formData) + ", " + prompt;
+    const result = await chatSession.sendMessage(preparedPrompt);
+    setOutput(result.response.text());
+    setLoading(false);
   }
 
   return (
@@ -32,9 +40,11 @@ function CreateContentPage({ params: { slug } }: CreateContentPageProps) {
         {selectedTemplate &&
           <InputSection
             selectedTemplate={selectedTemplate}
-            processFormData={(formData) => generateAIContent(formData)} />}
+            processFormData={(formData) => generateAIContent(formData)}
+            loading={loading}
+          />}
         <div className='col-span-2'>
-          <OutputSection />
+          <OutputSection output={output} />
         </div>
       </div>
     </div>
