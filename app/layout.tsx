@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/toaster";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin", "latin-ext"],
@@ -32,6 +33,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={hankenGrotesk.className}>{children}</body>
+        <Toaster />
       </html>
     </ClerkProvider>
   );

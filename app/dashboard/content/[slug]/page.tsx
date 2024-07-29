@@ -33,7 +33,6 @@ function CreateContentPage({ params: { slug } }: CreateContentPageProps) {
         createdBy: user?.primaryEmailAddress?.emailAddress || 'unknown',
         createdAt: moment().format('DD/MM/YYYY'),
       });
-      console.log(result);
     } catch (error) {
       console.error(error);
     }
