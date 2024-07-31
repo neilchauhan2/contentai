@@ -19,16 +19,11 @@ const SideNav = () => {
       icon: FileClock,
       path: "/dashboard/history"
     },
-    // {
-    //   name: "Billing",
-    //   icon: WalletCards,
-    //   path: "/dashboard/billing"
-    // },
-    // {
-    //   name: "Settings",
-    //   icon: Settings,
-    //   path: "/dashboard/settings"
-    // },
+    {
+      name: "Settings",
+      icon: Settings,
+      path: "/dashboard/settings"
+    },
   ]
   return (
     <div className='h-screen p-5 shadow-sm border bg-white'>
